@@ -1,0 +1,67 @@
+{% import "_includes/forms" as forms %}
+
+{{ forms.textField({
+    label: "Access Key ID",
+    id: 'keyId',
+    name: 'keyId',
+    value: volume.keyId,
+    errors: volume.getErrors('keyId'),
+    class: 'do-secret-id',
+    instructions: 'You can find this under API on the DigitalOcean Dashboard.'
+}) }}
+
+{{ forms.textField({
+    label: "Secret Access Key",
+    id: 'secret',
+    name: 'secret',
+    value: volume.secret,
+    errors: volume.getErrors('secret'),
+    class: 'do-secret-key',
+    instructions: 'You can find this under API on the DigitalOcean Dashboard.'
+}) }}
+
+{{ forms.textField({
+    label: "Region",
+    id: 'region',
+    name: 'region',
+    value: volume.region,
+    errors: volume.getErrors('region'),
+    class: 'do-region',
+    instructions: 'This is the region the space was created in.'
+}) }}
+
+
+{{ forms.textField({
+    label: "Space Name",
+    id: 'spaceName',
+    name: 'spaceName',
+    value: volume.spaceName,
+    errors: volume.getErrors('spaceName'),
+    class: 'do-spaceName',
+    instructions: 'This is the Space Name that you chose, akin to an S3 bucket name.'
+}) }}
+
+{{ forms.selectField({
+    label: "Default Visibility For Objects",
+    id: 'visibility',
+    name: 'visibility',
+    value: volume.visibility,
+    instructions: 'This is the default visibility for all objects uploaded to your Space.',
+    options: {
+        '' : 'Select Visibility',
+        'public' : 'Public',
+        'private' : 'Private',
+    }
+}) }}
+
+{{ forms.textField({
+    label: "Subfolder",
+    instructions: "If you want to use a subfolder within a Space as a Volume, specify the path to use here.",
+    id: 'subfolder',
+    class: 'ltr',
+    name: 'subfolder',
+    value: volume.subfolder,
+    errors: volume.getErrors('subfolder'),
+    required: false,
+    placeholder: "path/to/subfolder"
+}) }}

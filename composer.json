@@ -1,0 +1,38 @@
+{
+    "name": "ignite/digital-ocean-spaces",
+    "description": "A Volume Plugin that interacts with Digital Ocean Spaces ",
+    "type": "craft-plugin",
+    "version": "1.0.0",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin",
+        "digital ocean spaces"
+    ],
+    "support": {
+        "docs": "https://github.com/IGNITECreative/digital-ocean-spaces/blob/master/README.md",
+        "issues": "https://github.com/IGNITECreative/digital-ocean-spaces/issues"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "AJ Griem",
+            "homepage": "clicktoignite.com"
+        }
+    ],
+    "require": {
+        "craftcms/cms": "^3.0.0",
+        "league/flysystem-aws-s3-v3": "^1.0.18"
+    },
+    "autoload": {
+        "psr-4": {
+          "ignite\\digitaloceanspaces\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "Digital Ocean Spaces",
+        "handle": "digitaloceanspaces",
+        "changelogUrl": "https://raw.githubusercontent.com/IGNITECreative/digital-ocean-spaces/master/CHANGELOG.md"
+    }
+}
